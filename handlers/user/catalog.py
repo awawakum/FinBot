@@ -51,7 +51,7 @@ async def get_res_buttons(m, products):
         await bot.send_chat_action(m.chat.id, ChatActions.TYPING)
 
         await bot.edit_message_text(message_id=m.message_id, chat_id=m.chat.id, text='Доступные ресурсы: ')
-        await bot.edit_message_reply_markup(message_id=m.message_id, chat_id=m.chat.id, reply_markup=res_markup())
+        await bot.edit_message_reply_markup(message_id=m.message_id, chat_id=m.chat.id, reply_markup=res_markup(products))
 
 
 @dp.callback_query_handler(IsUser(), res_cb.filter(action='view'))
