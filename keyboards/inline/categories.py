@@ -20,11 +20,11 @@ def categories_markup():
 res_cb = CallbackData('res', 'id', 'action')
 
 
-def res_markup():
+def res_markup(products):
     global res_cb
 
     markup = InlineKeyboardMarkup()
-    for idx, title, body, _, _, _, _ in db.fetchall('SELECT * FROM products'):
+    for idx, title, body, _, _, _, _ in products:
         markup.add(InlineKeyboardButton(title, callback_data=res_cb.new(id=idx, action='view')))
     markup.add(InlineKeyboardButton(text='Назад', callback_data='Loans'))
 
