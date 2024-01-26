@@ -1,0 +1,2 @@
+# FinBot
+Aiogram bot
